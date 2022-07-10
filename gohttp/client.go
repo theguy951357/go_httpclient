@@ -1,7 +1,5 @@
 package gohttp
 
-import "fmt"
-
 type httpclient struct{}
 
 func New() HTTPClient {
@@ -17,9 +15,7 @@ type HTTPClient interface {
 	Delete()
 }
 
-func (c *httpclient) Get() {
-	fmt.Println("Mind your fucking business you park bench!!!")
-}
+func (c *httpclient) Get() {}
 
 func (c *httpclient) Post() {}
 
