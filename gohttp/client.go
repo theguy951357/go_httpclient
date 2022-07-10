@@ -2,15 +2,15 @@ package gohttp
 
 type httpclient struct{}
 
-func New() HttpClient {
+func New() HTTPClient {
 	client := &httpclient{}
 	return client
 }
 
-type HttpClient interface {
+type HTTPClient interface {
 	Get()
 	Post()
-	Put()
+	Pull()
 	Patch()
 	Delete()
 }
@@ -19,7 +19,7 @@ func (c *httpclient) Get() {}
 
 func (c *httpclient) Post() {}
 
-func (c *httpclient) Put() {}
+func (c *httpclient) Pull() {}
 
 func (c *httpclient) Patch() {}
 
