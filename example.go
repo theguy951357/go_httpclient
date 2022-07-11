@@ -11,6 +11,16 @@ var (
 	httpclient = gohttp.New()
 )
 
+func getGithubClient() gohttp.HTTPClient {
+	client := gohttp.New()
+
+	commonHeaders := make(http.Header)
+	commonHeaders.Set("Authorization", "Bearer ABC-123")
+
+	client.SetHeaders(commonHeaders)
+	return client
+}
+
 func main() {
 	basicExample()
 }
