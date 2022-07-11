@@ -1,4 +1,4 @@
-package gohttpclient
+package main
 
 import (
 	"fmt"
@@ -10,6 +10,10 @@ import (
 var (
 	httpclient = gohttp.New()
 )
+
+func main() {
+	basicExample()
+}
 
 func basicExample() {
 
