@@ -11,10 +11,6 @@ var (
 	httpclient = gohttp.New()
 )
 
-func main() {
-	basicExample()
-}
-
 func basicExample() {
 
 	headers := make(http.Header)
