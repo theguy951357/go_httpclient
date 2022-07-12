@@ -22,15 +22,34 @@ func getGithubClient() gohttp.HTTPClient {
 }
 
 func main() {
-	basicExample()
+	getUrls()
 }
 
-func basicExample() {
+type User struct {
+	FirstName string 'json: "first_name"'
+	LastName string 'json: "last_name"'
+	
+}
+
+func getUrls() {
 
 	headers := make(http.Header)
-	headers.Set("Authorization", "Bearer ABC-123")
+	//headers.Set("Authorization", "Bearer ABC-123")
 
 	response, err := httpclient.Get("https://api.github.com", headers)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response.StatusCode)
+}
+
+func createUser(user User) {
+	//requestBody := json.Marshal(user)
+	//headers := make(http.Header)
+	//headers.Set("Authorization", "Bearer ABC-123")
+
+	response, err := httpclient.Post("https://api.github.com", nil, user)
 	if err != nil {
 		panic(err)
 	}
